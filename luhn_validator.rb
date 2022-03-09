@@ -1,5 +1,6 @@
 # frozen_string_literal: true
 
+# top-level module documentation comment
 module LuhnValidator
   # Validates credit card number using Luhn Algorithm
   # arguments: none
@@ -9,7 +10,7 @@ module LuhnValidator
     nums_a = number.to_s.chars.map(&:to_i)
     total_num = 0
     check_number = nums_a[-1]
-    nums_a.reverse.slice(1, num.length - 1).map.with_index do |n, i|
+    nums_a.reverse.slice(1, nums_a.length - 1).map.with_index do |n, i|
       total_num = luhn_condition(total_num, n, i)
     end
     total = (total_num * 9) % 10
